@@ -1,0 +1,37 @@
+group 'inovus'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.5'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+    compile group: 'org.hsqldb', name: 'hsqldb', version: '2.3.4'
+    compile "org.slf4j:slf4j-api:1.7.21"
+    compile "org.slf4j:slf4j-log4j12:1.7.21"
+    compile 'javax.servlet:jstl:1.2'
+    compile group: 'org.springframework', name: 'spring-context', version: '4.1.6.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.1.6.RELEASE'
+    compile "org.springframework.security:spring-security-config:3.2.5.RELEASE"
+    compile "org.springframework.security:spring-security-core:3.2.5.RELEASE"
+    compile "org.springframework.security:spring-security-web:3.2.5.RELEASE"
+    compile "org.springframework.security:spring-security-taglibs:3.2.5.RELEASE"
+    compile group: 'org.springframework', name: 'spring-jdbc', version: '4.1.6.RELEASE'
+    compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '1.10.1.RELEASE'
+    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.1.Final'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '4.2.1.Final'
+    compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+    compile group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.3.3.Final'
+}
